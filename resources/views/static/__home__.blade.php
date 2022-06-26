@@ -199,7 +199,7 @@
                                     <div class="wrap">
                                         <p class="title-card ellipsis-2">{{ $article->title }}</p>
                                         <p class="body ellipsis-3">{{ strip_tags($article->content) }}</p>
-                                        <p class="category-card">{{ $article->article_tag }}
+                                        <p class="category-card">{{ $article->category['name'] }}
                                             <span
                                                 class="text-black pl-2">{{ $article->created_at->format('D M Y') }}</span>
                                         </p>

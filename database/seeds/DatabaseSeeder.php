@@ -19,9 +19,9 @@ class DatabaseSeeder extends Seeder
         //     SuitcaseDefaultSeeder::class,
         // ]);
         $user_admin = User::create(['name' => 'User Admin', 'email' => 'tapriandi@gmail.com', 'password' => bcrypt('password')]);
-        $user_admin = Category::create(['name' => 'Finansial']);
-        $user_admin = Category::create(['name' => 'Karir & Sukses']);
-        $user_admin = Category::create(['name' => 'Gaya Hidup']);
+        $financial_category = Category::create(['name' => 'Finansial']);
+        $karir_category = Category::create(['name' => 'Karir & Sukses']);
+        $hidup_category = Category::create(['name' => 'Gaya Hidup']);
 
         $perm_access_cms = Permission::create(['guard_name' => 'backpack', 'name' => 'access cms']);
         $perm_manage_admin = Permission::create(['guard_name' => 'backpack', 'name' => 'manage admin']);
