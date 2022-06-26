@@ -1,0 +1,395 @@
+// @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap");
+
+// Bootstrap
+// @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+@font-face {
+  font-family: 'Frutiger';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Frutiger'), url('../fonts/frutiger/Frutiger.woff') format('woff');
+}
+  
+
+@font-face {
+  font-family: 'Frutiger Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Frutiger Bold'), url('../fonts/frutiger/Frutiger_bold.woff') format('woff');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: white;
+  overflow-x: hidden;
+  font-family: "Frutiger";
+}
+
+// default
+$gray: #d6d6d6;
+$brown: #54464b;
+$green: #80bd01;
+$orange: #ef4923;
+$lightorange: #f9a61a;
+
+.bg-brown {
+  background-color: #55464b;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+a {
+  display: block;
+}
+
+// common
+.ocontainer-1 {
+  padding-left: 5%;
+  padding-right: 5%;
+}
+.ocontainer-2 {
+  padding-left: 2%;
+  padding-right: 2%;
+}
+.ocontainer-3 {
+  padding-left: 10%;
+  padding-right: 10%;
+}
+.okbtn {
+  display: flex;
+  height: fit-content;
+  width: fit-content;
+  color: $orange;
+  padding: 8px 20px;
+  text-align: center;
+  transition: 0.5s;
+  border-radius: 30px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid $orange;
+}
+.okbtn.orange {
+  color: white;
+  background: $orange;
+}
+.okbtn:hover {
+  color: white;
+  background: $orange;
+}
+.okbtn.orange:hover {
+  color: $orange;
+  background: white;
+}
+
+.title {
+  position: relative;
+  margin-bottom: 15px;
+  font-size: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid $gray;
+
+  &.main {
+    font-size: 30px;
+  }
+
+  .flex {
+    align-items: center;
+  }
+
+  .line {
+    padding: 8px 0;
+    width: fit-content;
+    border-bottom: 5px solid $lightorange;
+  }
+
+  &:after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: auto;
+    background: red;
+  }
+
+  .link {
+    font-size: 14px;
+    color: $green;
+  }
+}
+
+.ellipsis-1,
+.ellipsis-2,
+.ellipsis-3 {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+}
+.ellipsis {
+  &-2 {
+    -webkit-line-clamp: 2;
+  }
+  &-3 {
+    -webkit-line-clamp: 3;
+  }
+  &-4 {
+    -webkit-line-clamp: 4;
+  }
+}
+
+// header
+header .icon {
+  width: 25%;
+}
+.hamburger {
+  position: relative;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+
+  span {
+    position: absolute;
+    content: "";
+    width: 20px;
+    height: 2px;
+    transition: 0.3s;
+    background: #54464b7c;
+
+    &:nth-child(2) {
+      top: 7px;
+    }
+
+    &:nth-child(3) {
+      top: 14px;
+    }
+  }
+
+  &.active span {
+    &:nth-child(1) {
+      transform: rotate(45deg);
+      top: 6px;
+    }
+    &:nth-child(2) {
+      transform: rotate(-45deg);
+      top: 6px;
+    }
+    &:nth-child(3) {
+      display: none;
+    }
+  }
+}
+.menu.active {
+  display: flex;
+  top: 40px;
+  left: 5%;
+  color: white;
+  padding: 15px 20px 15px 15px;
+  position: absolute;
+  background: $brown;
+  flex-direction: column;
+
+  ul {
+    padding-bottom: 10px;
+  }
+}
+.search {
+  input.active {
+    display: block;
+  }
+  img.close {
+    display: none;
+  }
+}
+
+
+// home
+.card-article {
+  overflow: hidden;
+  min-height: 100px;
+  transition: 0.5s;
+
+  &:hover {
+    box-shadow: 0 0 5px $gray;
+  }
+
+  &.no-hover:hover {
+    box-shadow: none;
+  }
+
+  &.big {
+    .title-card {
+      font-size: 24px;
+    }
+  }
+
+  &.a {
+    img {
+      width: 35%;
+    }
+    .wrap,
+    img {
+      padding: 2%;
+    }
+  }
+
+  &.b {
+    display: flex;
+    padding: 10px;
+
+    img {
+      width: 40%;
+    }
+  }
+
+  img {
+    width: 100%;
+    object-fit: contain;
+    object-position: top;
+  }
+
+  .wrap {
+    padding: 3%;
+  }
+
+  .category-card {
+    padding: 8px 0;
+    color: $orange;
+    font-size: 12px;
+    font-weight: bold;
+  }
+
+  .title-card {
+    font-size: 16px;
+    font-weight: bold;
+  }
+
+  .body {
+    padding-top: 6px;
+  }
+
+  &.other {
+    width: 22%;
+    margin: 1%;
+  }
+}
+
+.middle {
+  .wrapper {
+    width: 70%;
+  }
+  .popular {
+    width: 30%;
+  }
+}
+
+.article-slider {
+  .card-article {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 1128px) {
+  .ocontainer-3 {
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+}
+
+@media (max-width: 780px) {
+  .ocontainer-1,
+  .ocontainer-3 {
+    padding-left: 4%;
+    padding-right: 4%;
+  }
+  .ocontainer-2 {
+    padding-left: 6%;
+    padding-right: 6%;
+  }
+
+  .title {
+    font-size: 16px;
+
+    &.main {
+      font-size: 22px;
+    }
+
+    .line {
+      padding: 5px 0;
+      border-bottom: 4px solid $lightorange;
+    }
+
+    .flex {
+      align-items: flex-start;
+      flex-direction: column;
+      justify-content: center;
+      border-bottom: 4px solid $lightorange;
+
+      .line {
+        border: 0;
+        padding: 0;
+      }
+    }
+
+    p {
+      padding: 3px 0;
+    }
+  }
+
+  .card-article {
+    overflow: hidden;
+    min-height: 70px;
+    transition: 0.5s;
+
+    &.big {
+      .title-card {
+        font-size: 18px;
+      }
+    }
+    .wrap {
+      padding: 2%;
+    }
+    .category-card {
+      padding: 5px 0;
+      font-size: 10px;
+    }
+    .title-card {
+      font-size: 13px;
+    }
+
+    &.other {
+      width: 45%;
+      margin: 1%;
+    }
+  }
+
+  // home
+  .middle {
+    .wrapper, .popular {
+      width: 100%;
+    }
+  }
+}
+
+@media (max-width: 680px) {
+  header {
+    .okbtn {
+      font-size: 7px;
+      padding: 0 5px;
+    }
+  }
+
+
+}
