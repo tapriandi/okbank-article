@@ -54,32 +54,25 @@ jQuery(document).ready(function () {
     prevScrollpos = currentScrollPos;
   }
 
-  const classAnimate = ['gallery'];
-  classAnimate.forEach(function(e) {
-    jQuery(`${'a.' + e}`).click(function() {
-      jQuery('body, html').animate({scrollTop: jQuery(`${'#' + e}`).offset().top}, 1000);
-    });
-  });
+  const pathname = jQuery(location).attr("href").split('/').pop();
+  console.log(pathname);
+  if (pathname == 'finansial') {
+    console.log('masuk 1');
+    jQuery('.menu ul li.a').addClass('active');
+    jQuery('.menu ul li.b').removeClass('active');
+    jQuery('.menu ul li.c').removeClass('active');
+  } else if (pathname == 'karir-&-sukses') {
+    console.log('masuk 2');
 
-  // share to social media
-  jQuery('.btn-share-to-facebook').click(function(){
-    tmp = {};
-    tmp.method = 'share';
-    tmp.href = jQuery(this).data('href');
-    FB.ui(tmp);
-  });
-  
-  jQuery('.btn-share-to-twitter').click(function(){
-    // msg = encodeURI(jQuery('title').text().trim()).replace('#','%23');
-    msg = jQuery.trim(jQuery(this).data('title')).substring(0, 140);
-    href = jQuery.trim(jQuery(this).data('href'));
-    window.open('http://twitter.com/share?' 
-    // +'&text=' + jQuery.trim(msg.replace(/["']/g, "")).substring(0, 140).trim(this) + "&hellip;"
-    +'&text=' + encodeURIComponent(msg)
-    + '&url=' + encodeURIComponent(href)
-    + '&', 'twitterwindow', 'height=450, width=550, top='
-    + (jQuery(window).height()/2 - 225) +', left=' + jQuery(window).width()/2 
-    +', toolbar=0, location=0, menubar=0, directories=0, scrollbars=0');
-  });
+    jQuery('.menu ul li.a').removeClass('active');
+    jQuery('.menu ul li.b').addClass('active');
+    jQuery('.menu ul li.c').removeClass('active');
+  } else if (pathname == 'gaya-hidup') {
+    console.log('masuk 3');
+
+    jQuery('.menu ul li.a').removeClass('active');
+    jQuery('.menu ul li.b').removeClass('active');
+    jQuery('.menu ul li.c').addClass('active');
+  }
 
 });

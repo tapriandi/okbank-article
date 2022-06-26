@@ -33,18 +33,18 @@
     <div class="ocontainer-1 float">
         <div class="menu py-4 justify-evenly border hidden md:flex">
             <ul>
-                <li>
-                    <a href="#" class="text-sm md:text-lg hover:underline">Finansial</a>
+                <li class="a">
+                    <a href="{{ url('finansial') }}" class="text-sm md:text-lg">Finansial</a>
                 </li>
             </ul>
             <ul>
-                <li>
-                    <a href="#" class="text-sm md:text-lg hover:underline">Karir & Sukses</a>
+                <li class="b">
+                    <a href="{{ url('karir-&-sukses') }}" class="text-sm md:text-lg">Karir & Sukses</a>
                 </li>
             </ul>
             <ul>
-                <li>
-                    <a href="#" class="text-sm md:text-lg hover:underline">Gaya Hidup</a>
+                <li class="c">
+                    <a href="{{ url('gaya-hidup') }}" class="text-sm md:text-lg">Gaya Hidup</a>
                 </li>
             </ul>
 

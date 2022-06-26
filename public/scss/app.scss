@@ -3,18 +3,18 @@
 // Bootstrap
 // @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 @font-face {
-  font-family: 'Frutiger';
+  font-family: "Frutiger";
   font-style: normal;
   font-weight: normal;
-  src: local('Frutiger'), url('../fonts/frutiger/Frutiger.woff') format('woff');
+  src: local("Frutiger"), url("../fonts/frutiger/Frutiger.woff") format("woff");
 }
-  
 
 @font-face {
-  font-family: 'Frutiger Bold';
+  font-family: "Frutiger Bold";
   font-style: normal;
   font-weight: normal;
-  src: local('Frutiger Bold'), url('../fonts/frutiger/Frutiger_bold.woff') format('woff');
+  src: local("Frutiger Bold"),
+    url("../fonts/frutiger/Frutiger_bold.woff") format("woff");
 }
 
 * {
@@ -191,18 +191,29 @@ header .icon {
     }
   }
 }
-.menu.active {
-  display: flex;
-  top: 40px;
-  left: 5%;
-  color: white;
-  padding: 15px 20px 15px 15px;
-  position: absolute;
-  background: $brown;
-  flex-direction: column;
+.menu {
+  &.active {
+    display: flex;
+    top: 40px;
+    left: 5%;
+    color: white;
+    padding: 15px 20px 15px 15px;
+    position: absolute;
+    background: $brown;
+    flex-direction: column;
 
-  ul {
-    padding-bottom: 10px;
+    ul {
+      padding-bottom: 10px;
+    }
+  }
+
+  ul li {
+    border-bottom: 1px solid transparent;
+  }
+  ul li.active, ul li:hover {
+    color: $orange;
+    font-weight: bold;
+    border-bottom: 1px solid $orange;
   }
 }
 .search {
@@ -213,7 +224,6 @@ header .icon {
     display: none;
   }
 }
-
 
 // home
 .card-article {
@@ -301,6 +311,14 @@ header .icon {
   }
 }
 
+// category detail
+.category-detail {
+  .card-article {
+    width: 22%;
+    margin: 1%;
+  }
+}
+
 @media (max-width: 1128px) {
   .ocontainer-3 {
     padding-left: 2%;
@@ -377,8 +395,16 @@ header .icon {
 
   // home
   .middle {
-    .wrapper, .popular {
+    .wrapper,
+    .popular {
       width: 100%;
+    }
+  }
+
+  //cetegory detail
+  .category-detail {
+    .card-article {
+      width: 31%;
     }
   }
 }
@@ -391,5 +417,10 @@ header .icon {
     }
   }
 
-
+  //cetegory detail
+  .category-detail {
+    .card-article {
+      width: 46%;
+    }
+  }
 }

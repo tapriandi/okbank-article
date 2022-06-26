@@ -17,6 +17,14 @@ Route::get('/', function () {
 
 Route::get('/article/{uri}', 'ArticleController@detail');
 
-Route::get('/article/finansial', function () {
-    return view('welcome');
+Route::get('/finansial', function () {
+    return view('static.finansial');
 });
+Route::get('/karir-&-sukses', function () {
+    return view('static.karir-&-sukses');
+});
+
+Route::get('/gaya-hidup', function () {
+    return view('static.gaya-hidup');
+});
+
