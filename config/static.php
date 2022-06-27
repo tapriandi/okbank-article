@@ -7,7 +7,7 @@ return [
             'preprocessor' => \App\Preprocessor\HomepagePreprocessor::class,
         ],
         'article' => [
-            'title' => 'Article',
+            'title' => 'Artikel',
             'preprocessor' => \App\Preprocessor\ArticlePreprocessor::class,
         ],
         'finansial' => [
@@ -21,7 +21,7 @@ return [
         'gaya-hidup' => [
             'title' => 'Gaya Hidup',
             'preprocessor' => \App\Preprocessor\LifeStylePreprocessor::class,
-        ]
+        ],
     ],
     'blocks' => [
     ],

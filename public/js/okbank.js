@@ -34,6 +34,7 @@ jQuery(document).ready(function () {
   jQuery('.search img.open').click(function () {
     jQuery('.search input').addClass('active');
     jQuery(this).css({display: 'none'});
+    jQuery('#input-search').focus();
     jQuery('.search img.close').css({display: 'block'});
   });
   jQuery('.search img.close').click(function () {

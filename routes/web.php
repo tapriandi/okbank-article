@@ -17,6 +17,8 @@ Route::get('/', function () {
 
 Route::get('/article/{uri}', 'ArticleController@detail');
 
+Route::get('/search', 'SearchController@search');
+
 Route::get('/finansial', function () {
     return view('static.finansial');
 });
@@ -28,3 +30,4 @@ Route::get('/gaya-hidup', function () {
     return view('static.gaya-hidup');
 });
 
+Route::get('/search', 'SearchController@search');

@@ -44,7 +44,7 @@
                                 <p class="text-red-500 pl-2 text-xs md:text-base lg:text-lg">Atur Keuangan Selama Covid-19
                                 </p>
                             </div>
-                            <a href="{{ url('career') }}" class="link">selengkapnya</a>
+                            <a href="{{ url('karir-&-sukses') }}" class="link">selengkapnya</a>
                         </div>
                         <div class="article-slider block lg:hidden">
                             @foreach ($articleCareers as $key => $articleCareer)
@@ -160,15 +160,17 @@
                     <div class="title">
                         <p class="line">Populer</p>
                     </div>
-                    @foreach ($links as $link)
-                        <a href="{{ $link->link }}" class="card-article border" target="_blank">
-                            <div class="wrap">
-                                <p class="category-card">{{ $link->category }}
-                                    <span class="text-black pl-2">{{ $link->created_at->format('D M Y') }}</span>
-                                </p>
-                                <p class="title-card ellipsis-3">{{ $link->title }}</p>
-                            </div>
-                        </a>
+                    @foreach ($links as $key => $link)
+                        @if ($key <= 6)
+                            <a href="{{ $link->link }}" class="card-article border" target="_blank">
+                                <div class="wrap">
+                                    <p class="category-card">{{ $link->category }}
+                                        <span class="text-black pl-2">{{ $link->created_at->format('D M Y') }}</span>
+                                    </p>
+                                    <p class="title-card ellipsis-3">{{ $link->title }}</p>
+                                </div>
+                            </a>
+                        @endif
                     @endforeach
                 </div>
             </div>
