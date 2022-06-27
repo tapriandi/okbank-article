@@ -61,7 +61,11 @@
     </div>
 
     <div class="search flex justify-end pt-4 pr-5 cursor-pointer block md:hidden">
-        <input type="text" class="border-b mr-5 hidden px-2 py-1 text-sm md:text-base" placeholder="search">
+        <form action="{{ url('/search') }}" method="get">
+            <input type="text" name="keyword" id="input-search"
+                class="border-b mr-5 hidden px-2 py-1 text-sm md:text-base"
+                placeholder="search">
+        </form>
         <img class="open w-5 h-5" src={{ asset('images/search.png') }} alt="">
         <img class="close w-5 h-5" src={{ asset('images/close.png') }} alt="">
     </div>

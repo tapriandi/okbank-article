@@ -319,6 +319,28 @@ header .icon {
   }
 }
 
+// pagination
+.pagination {
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+  li {
+    width: 24px;
+    height: 24px;
+    margin: 0 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    
+    &:hover, &.active {
+      color: white;
+      background: $lightorange;
+    }
+
+  }
+}
+
 @media (max-width: 1128px) {
   .ocontainer-3 {
     padding-left: 2%;
