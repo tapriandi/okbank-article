@@ -1,13 +1,10 @@
 @extends('layouts/default')
 
 @section('content')
-    <div class="category-detail pt-4 ocontainer-1 py-10">
-        <h2 class="pb-5 font-bold text-xl lg:text-3xl">Artikel Gaya Hidup</h2>
+    <div class="category-detail ocontainer-1 pt-10 pb-20">
+        <h2 class="pb-6 font-bold text-xl lg:text-3xl">Artikel Gaya Hidup</h2>
         <div class="flex flex-wrap justify-center lg:px-5">
-            @if (strlen($articleLifeStyles))
-                <p class="py-20">Belum ada artikel tentang Gaya Hidup</p>
-            @else
-            @foreach ($articleLifeStyles as $key => $articleLifeStyle)
+            @forelse ($articleLifeStyles as $key => $articleLifeStyle)
                 <a href="{{ url('article/' . $articleLifeStyle->uri) }}" class="card-article">
                     <img src="{{ asset($articleLifeStyle->image) }}" alt="">
                     <div class="wrap">
@@ -17,8 +14,9 @@
                         <p class="title-card ellipsis-3">{{ $articleLifeStyle->title }}</p>
                     </div>
                 </a>
-            @endforeach
-            @endif
+            @empty
+                <p class="py-28">Belum ada artikel tentang Gaya Hidup</p>
+            @endforelse
         </div>
     </div>
 @endsection
